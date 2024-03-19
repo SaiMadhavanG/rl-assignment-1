@@ -7,7 +7,7 @@
   	"inferenceFrequeny": 5,
   	"haltConditionChain": 2,
 
-  	"runId": "buffer2",
+  	"runId": "buffer3",
   	"loadCheckpoint": "",
   	"writer": true,
 
@@ -20,7 +20,7 @@
 
   	"lr": 1e-3,
 
-  	"replayBufferSize": 150,
+  	"replayBufferSize": 600,
   	"batchSize": 128,
 
   	"gamma": 1
