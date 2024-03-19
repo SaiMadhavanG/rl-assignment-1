@@ -7,7 +7,7 @@
   	"inferenceFrequeny": 5,
   	"haltConditionChain": 2,
 
-  	"runId": "lr2",
+  	"runId": "batch1",
   	"loadCheckpoint": "",
   	"writer": true,
 
@@ -18,10 +18,10 @@
   	"epsilon": 0.1,
   	"epsilonDecay": 0.9,
 
-  	"lr": 1e-2,
+  	"lr": 1e-3,
 
   	"replayBufferSize": 400,
-  	"batchSize": 128,
+  	"batchSize": 32,
 
   	"gamma": 1
 }
