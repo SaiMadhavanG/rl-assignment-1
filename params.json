@@ -7,7 +7,7 @@
   	"inferenceFrequeny": 5,
   	"haltConditionChain": 2,
 
-  	"runId": "eps3",
+  	"runId": "eps4",
   	"loadCheckpoint": "",
   	"writer": true,
 
@@ -15,8 +15,8 @@
   	"numEpisodes": 300,
   	"epsilonDecayFrequency": 10,
 
-  	"epsilon": 0.5,
-  	"epsilonDecay": 0.9,
+  	"epsilon": 0.1,
+  	"epsilonDecay": 1,
 
   	"lr": 1e-3,
 
