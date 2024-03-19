@@ -1,0 +1,21 @@
+{
+  "env": "CartPole-v1",
+  "gamma": 1,
+  "epsilon": 0.1,
+  "numEpisodes": 300,
+  "stateDim": 4,
+  "actionDim": 2,
+  "replayBufferSize": 400,
+  "batchSize": 128,
+  "epsilonDecay": 0.9,
+  "epsilonDecayFrequency": 50,
+  "lr": 1e-3,
+  "checkpointDir": "checkpoints",
+  "checkpointFrequency": 2500,
+  "runId": "alpha",
+  "inferenceFrequeny": 5,
+  "terminationSteps": 500,
+  "haltConditionChain": 2,
+  "loadCheckpoint": "C:\\programming\\projects\\rl-assignment-1\\checkpoints\\alpha\\checkpoint-7671.pkl",
+  "writer": false
+}
