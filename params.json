@@ -7,7 +7,7 @@
   	"inferenceFrequeny": 5,
   	"haltConditionChain": 2,
 
-  	"runId": "eps6",
+  	"runId": "lr1",
   	"loadCheckpoint": "",
   	"writer": true,
 
@@ -16,9 +16,9 @@
   	"epsilonDecayFrequency": 10,
 
   	"epsilon": 0.1,
-  	"epsilonDecay": 0.5,
+  	"epsilonDecay": 0.9,
 
-  	"lr": 1e-3,
+  	"lr": 1e-4,
 
   	"replayBufferSize": 400,
   	"batchSize": 128,
