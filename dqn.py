@@ -311,6 +311,9 @@ if __name__ == "__main__":
         N = int(sys.argv[3])
         dqn = DQN.load_checkpoint(params["loadCheckpoint"])
         dqn.env = gym.make(params["env"], render_mode="human")
+        s = 0
         for i in range(N):
             dqn.runInference()
             print(dqn.inferenceRewards[-1])
+            s += dqn.inferenceRewards[-1]
+        print(f"Average score: {s/N:.2f}")

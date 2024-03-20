@@ -1,27 +1,27 @@
 {
-	"env": "CartPole-v1",
-  	"stateDim": 4,
-  	"actionDim": 2,
-  	"checkpointDir": "checkpoints",
-  	"checkpointFrequency": 2500,
-  	"inferenceFrequeny": 5,
-  	"haltConditionChain": 2,
+  "env": "CartPole-v1",
+  "stateDim": 4,
+  "actionDim": 2,
+  "checkpointDir": "checkpoints",
+  "checkpointFrequency": 2500,
+  "inferenceFrequeny": 5,
+  "haltConditionChain": 2,
 
-  	"runId": "gamma1",
-  	"loadCheckpoint": "",
-  	"writer": true,
+  "runId": "gamma1",
+  "loadCheckpoint": "C:\\programming\\projects\\rl-assignment-1\\checkpoints\\eps1\\checkpoint-12835.pkl",
+  "writer": true,
 
-  	"terminationSteps": 1000,
-  	"numEpisodes": 300,
-  	"epsilonDecayFrequency": 10,
+  "terminationSteps": 1000,
+  "numEpisodes": 300,
+  "epsilonDecayFrequency": 10,
 
-  	"epsilon": 0.1,
-  	"epsilonDecay": 0.9,
+  "epsilon": 0.1,
+  "epsilonDecay": 0.9,
 
-  	"lr": 1e-3,
+  "lr": 1e-3,
 
-  	"replayBufferSize": 600,
-  	"batchSize": 128,
+  "replayBufferSize": 600,
+  "batchSize": 128,
 
-  	"gamma": 0.9
+  "gamma": 0.9
 }
