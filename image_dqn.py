@@ -128,8 +128,6 @@ class DQN:
             nn.ReLU(),
             nn.Linear(512, 64),  # Another hidden layer with ReLU activation
             nn.ReLU(),
-            nn.Linear(64, 64),  # Another hidden layer with ReLU activation
-            nn.ReLU(),
             nn.Linear(64, outDim),  # Output layer
         ).to(device)
 
@@ -209,10 +207,9 @@ class DQN:
                 return
 
     def getState(self):
-        with torch.no_grad():
-            img = processImg(self.env.render()).to(device)
-            img = torch.unsqueeze(img, 0)
-            return torch.squeeze(self.imageModel(img))
+        img = processImg(self.env.render()).to(device)
+        img = torch.unsqueeze(img, 0)
+        return torch.squeeze(self.imageModel(img))
 
     # Select action using epsilon-greedy policy
     def selectAction(self, state, index):
@@ -280,7 +277,7 @@ class DQN:
 
             # Compute loss and backpropagate
             loss = self.my_loss(QS, Y)
-            loss.backward()
+            loss.backward(retain_graph=True)
             self.optim.step()  # Update network parameters
 
             self.Qs.append(QS.flatten().sum().item())  # Track sum of Q-values
