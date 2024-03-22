@@ -206,9 +206,10 @@ class DQN:
                 return
 
     def getState(self):
-        img = processImg(self.env.render()).to(device)
-        img = torch.unsqueeze(img, 0)
-        return torch.squeeze(self.imageModel(img))
+        with torch.no_grad():
+            img = processImg(self.env.render()).to(device)
+            img = torch.unsqueeze(img, 0)
+            return torch.squeeze(self.imageModel(img))
 
     # Select action using epsilon-greedy policy
     def selectAction(self, state, index):
@@ -276,7 +277,7 @@ class DQN:
 
             # Compute loss and backpropagate
             loss = self.my_loss(QS, Y)
-            loss.backward(retain_graph=True)
+            loss.backward()
             self.optim.step()  # Update network parameters
 
             self.Qs.append(QS.flatten().sum().item())  # Track sum of Q-values

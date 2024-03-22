@@ -7,23 +7,23 @@
   "inferenceFrequeny": 5,
   "haltConditionChain": 2,
 
-  "runId": "img9",
+  "runId": "img12",
   "loadCheckpoint": "C:\\programming\\projects\\rl-assignment-1\\checkpoints\\eps1\\checkpoint-12835.pkl",
-  "writer": false,
+  "writer": true,
 
   "seqLen": 4,
 
   "terminationSteps": 1000,
   "numEpisodes": 1500,
-  "epsilonDecayFrequency": 1500,
+  "epsilonDecayFrequency": 1000,
 
   "epsilon": 0.1,
-  "epsilonDecay": 0.9,
+  "epsilonDecay": 0.6,
 
   "lr": 1e-3,
 
-  "replayBufferSize": 500,
-  "batchSize": 64,
+  "replayBufferSize": 600,
+  "batchSize": 128,
 
   "gamma": 1
 }
