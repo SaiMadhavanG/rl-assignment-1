@@ -7,11 +7,11 @@
   "inferenceFrequeny": 5,
   "haltConditionChain": 2,
 
-  "runId": "img13",
+  "runId": "img14",
   "loadCheckpoint": "C:\\programming\\projects\\rl-assignment-1\\checkpoints\\eps1\\checkpoint-12835.pkl",
   "writer": true,
 
-  "seqLen": 4,
+  "seqLen": 2,
 
   "terminationSteps": 1000,
   "numEpisodes": 1500,
