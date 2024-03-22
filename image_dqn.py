@@ -289,6 +289,7 @@ class DQN:
 
     def runInference(self):
         self.network.eval()
+
         # Initialize lists to store episode rewards and average Q values
         # Iterate over episodes
 

@@ -3,13 +3,13 @@
   "stateDim": 2,
   "actionDim": 2,
   "checkpointDir": "checkpoints",
-  "checkpointFrequency": 2500,
+  "checkpointFrequency": 5000,
   "inferenceFrequeny": 5,
   "haltConditionChain": 2,
 
   "runId": "img9",
   "loadCheckpoint": "C:\\programming\\projects\\rl-assignment-1\\checkpoints\\eps1\\checkpoint-12835.pkl",
-  "writer": false,
+  "writer": true,
 
   "seqLen": 4,
 
@@ -22,7 +22,7 @@
 
   "lr": 1e-3,
 
-  "replayBufferSize": 500,
+  "replayBufferSize": 400,
   "batchSize": 64,
 
   "gamma": 1
