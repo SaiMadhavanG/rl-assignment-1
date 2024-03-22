@@ -7,7 +7,7 @@
   "inferenceFrequeny": 5,
   "haltConditionChain": 2,
 
-  "runId": "img12",
+  "runId": "img13",
   "loadCheckpoint": "C:\\programming\\projects\\rl-assignment-1\\checkpoints\\eps1\\checkpoint-12835.pkl",
   "writer": true,
 
@@ -15,7 +15,7 @@
 
   "terminationSteps": 1000,
   "numEpisodes": 1500,
-  "epsilonDecayFrequency": 1000,
+  "epsilonDecayFrequency": 1200,
 
   "epsilon": 0.1,
   "epsilonDecay": 0.6,
