@@ -96,7 +96,6 @@ class DQN:
         self.imageModel = torchvision.models.resnet18()
         self.imageModel.fc = nn.Linear(512, 2)
         self.imageModel.load_state_dict(torch.load(imageModel))
-        self.imageModel.fc = Identity()
         self.imageModel = self.imageModel.to(device)
 
         # Initialize counters and lists
@@ -122,13 +121,13 @@ class DQN:
     # Define the neural network architecture
     def createNetwork(self, inDim, outDim):
         return nn.Sequential(
-            nn.Linear(inDim, 1024),  # Input layer with ReLU activation
+            nn.Linear(inDim, 64),  # Input layer with ReLU activation
             nn.ReLU(),
-            nn.Linear(1024, 512),  # Hidden layer with ReLU activation
+            nn.Linear(64, 64),  # Hidden layer with ReLU activation
             nn.ReLU(),
-            nn.Linear(512, 64),  # Another hidden layer with ReLU activation
+            nn.Linear(64, 32),  # Another hidden layer with ReLU activation
             nn.ReLU(),
-            nn.Linear(64, outDim),  # Output layer
+            nn.Linear(32, outDim),  # Output layer
         ).to(device)
 
     # Define custom loss function for DQN

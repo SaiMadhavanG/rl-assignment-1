@@ -1,20 +1,20 @@
 {
   "env": "CartPole-v1",
-  "stateDim": 512,
+  "stateDim": 2,
   "actionDim": 2,
   "checkpointDir": "checkpoints",
   "checkpointFrequency": 2500,
   "inferenceFrequeny": 5,
   "haltConditionChain": 2,
 
-  "runId": "img8",
+  "runId": "img9",
   "loadCheckpoint": "C:\\programming\\projects\\rl-assignment-1\\checkpoints\\eps1\\checkpoint-12835.pkl",
-  "writer": true,
+  "writer": false,
 
-  "seqLen": 2,
+  "seqLen": 4,
 
   "terminationSteps": 1000,
-  "numEpisodes": 2000,
+  "numEpisodes": 1500,
   "epsilonDecayFrequency": 1500,
 
   "epsilon": 0.1,
