@@ -153,7 +153,10 @@ class DQN:
             terminalState = False
             self.Qs = []  # List to store Q values
             numSteps = 0
-            states = [self.getState()] * self.seqLen
+            states = [torch.tensor([100, 100]).to(device)] * (self.seqLen - 1) + [
+                self.getState()
+            ]
+
             currentState = torch.concat(states)
 
             # Loop until episode termination
@@ -299,7 +302,9 @@ class DQN:
         terminalState = False
         self.Qs = []  # List to store Q values
         numSteps = 0
-        states = [self.getState()] * self.seqLen
+        states = [torch.tensor([100, 100]).to(device)] * (self.seqLen - 1) + [
+            self.getState()
+        ]
         currentState = torch.concat(states)
         # Loop until episode termination
         while not terminalState and numSteps < self.terminationSteps:
