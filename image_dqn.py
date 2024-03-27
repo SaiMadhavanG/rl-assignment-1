@@ -14,6 +14,7 @@ import os
 from datetime import datetime
 import json
 import sys
+import cv2
 
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -153,10 +154,7 @@ class DQN:
             terminalState = False
             self.Qs = []  # List to store Q values
             numSteps = 0
-            states = [torch.tensor([100, 100]).to(device)] * (self.seqLen - 1) + [
-                self.getState()
-            ]
-
+            states = [self.getState()] * self.seqLen
             currentState = torch.concat(states)
 
             # Loop until episode termination
@@ -295,19 +293,20 @@ class DQN:
         self.network.eval()
         # Initialize lists to store episode rewards and average Q values
         # Iterate over episodes
-
+        cv2.namedWindow("Inference", cv2.WINDOW_AUTOSIZE)
         rewards = []
         # Reset environment and get initial state
         (_, _) = self.env.reset()
         terminalState = False
         self.Qs = []  # List to store Q values
         numSteps = 0
-        states = [torch.tensor([100, 100]).to(device)] * (self.seqLen - 1) + [
-            self.getState()
-        ]
+        states = [self.getState()] * self.seqLen
         currentState = torch.concat(states)
         # Loop until episode termination
         while not terminalState and numSteps < self.terminationSteps:
+            img = self.env.render()
+            cv2.imshow("Inference", cv2.cvtColor(img, cv2.COLOR_RGB2BGR))
+            cv2.waitKey(20)
             # Select action using epsilon-greedy policy
             Q = self.network(currentState.reshape(1, self.stateDim).to(device))
             action = torch.argmax(Q[0]).item()
@@ -319,6 +318,7 @@ class DQN:
             rewards.append(reward)
             currentState = nextState
             numSteps += 1
+        cv2.destroyAllWindows()
 
         # Store episode reward and average Q value
         self.inferenceRewards.append(np.sum(rewards))
@@ -366,7 +366,7 @@ if __name__ == "__main__":
     elif sys.argv[2] == "inference":
         N = int(sys.argv[3])
         dqn = DQN.load_checkpoint(params["loadCheckpoint"])
-        dqn.env = gym.make(params["env"], render_mode="human")
+        dqn.env = gym.make(params["env"], render_mode="rgb_array")
         s = 0
         for i in range(N):
             dqn.runInference()

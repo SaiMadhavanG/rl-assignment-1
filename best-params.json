@@ -1,0 +1,27 @@
+{
+  "env": "CartPole-v1",
+  "stateDim": 4,
+  "actionDim": 2,
+  "checkpointDir": "checkpoints",
+  "checkpointFrequency": 2500,
+  "inferenceFrequeny": 5,
+  "haltConditionChain": 2,
+
+  "runId": "buffer3",
+  "loadCheckpoint": "./models/buffer3.pkl",
+  "writer": true,
+
+  "terminationSteps": 1000,
+  "numEpisodes": 300,
+  "epsilonDecayFrequency": 10,
+
+  "epsilon": 0.1,
+  "epsilonDecay": 0.9,
+
+  "lr": 1e-3,
+
+  "replayBufferSize": 600,
+  "batchSize": 128,
+
+  "gamma": 1
+}

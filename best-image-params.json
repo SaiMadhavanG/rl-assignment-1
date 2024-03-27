@@ -1,0 +1,29 @@
+{
+  "env": "CartPole-v1",
+  "stateDim": 2,
+  "actionDim": 2,
+  "checkpointDir": "checkpoints",
+  "checkpointFrequency": 2500,
+  "inferenceFrequeny": 5,
+  "haltConditionChain": 2,
+
+  "runId": "img12",
+  "loadCheckpoint": "./models/img12.pkl",
+  "writer": true,
+
+  "seqLen": 4,
+
+  "terminationSteps": 1000,
+  "numEpisodes": 1500,
+  "epsilonDecayFrequency": 1000,
+
+  "epsilon": 0.1,
+  "epsilonDecay": 0.6,
+
+  "lr": 1e-3,
+
+  "replayBufferSize": 600,
+  "batchSize": 128,
+
+  "gamma": 1
+}
